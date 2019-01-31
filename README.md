@@ -1,2 +1,2 @@
 # northwest-trail-runners
-Demo landing page
+Landing page for Northwest Trail Runners on Meetup
