@@ -1,0 +1,21 @@
+.event_card {
+    display: inline-block;
+    border-radius: var(--border-radius);
+    background: var(--card-background-color);
+    box-shadow: var(--card-box-shadow);
+    padding: 1rem;
+    margin: 1rem;
+    color: var(--h1-color) !important;
+    text-decoration: none !important;
+    text-align: left;
+}
+
+.event_time,
+.event_yes_rsvp {
+    display: block;
+}
+
+.event_yes_rsvp {
+    margin-top: 0.5rem;
+    color: var(--muted-color);
+}
