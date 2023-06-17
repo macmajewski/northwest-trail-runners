@@ -1,0 +1,50 @@
+:root {
+  /* todo: Remove !importants */
+  --primary: #f13a59 !important;
+  --primary-hover: #e81035 !important;
+  --primary-focus: rgba(241, 58, 89, 0.125) !important;
+  --primary-inverse: #fff !important;
+
+  --form-element-spacing-vertical: 0.5rem;
+  --form-element-spacing-horizontal: 0.75rem;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: #ececee;
+  background-image: url('/background.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: serif;
+  font-weight: 500;
+  line-height: 120%;
+  margin-bottom: 1.5rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+@media (min-width: 992px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+}
+
+.font-serif {
+  font-family: serif;
+}
