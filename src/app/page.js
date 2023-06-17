@@ -34,13 +34,6 @@ export default async function Home() {
 }
 
 async function getEvents() {
-  /*
-  return [
-    { name: 'Something else', time: 1686909900000, yes_rsvp_count: 12, link: 'https://northwesttrailrunners.org/' },
-    { name: 'Springville Loop', time: 1687017600000, yes_rsvp_count: 8, link: 'https://northwesttrailrunners.org/' }
-  ];
-  */
-
   const res = await fetch('https://api.meetup.com/northwest-trail-runners/events');
 
   if (!res.ok) throw new Error(res.status);
@@ -48,12 +41,12 @@ async function getEvents() {
   const result = await res.json();
 
   const top5 = (Array.isArray(result) ? result : [])
-    .filter(e => e.visibility === "public")
+    .filter(event => event.visibility === "public")
     .sort((a, b) => a.time - b.time)
     .splice(0, 5);
 
-  return top5.map(e => {
-    e._when = moment.tz(e.time, e.group.timezone).calendar();
-    return e;
+  return top5.map(event => {
+    event._when = moment.tz(event.time, event.group.timezone).calendar();
+    return event;
   });
 }
