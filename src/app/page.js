@@ -1,3 +1,4 @@
+import moment from 'moment-timezone'
 import EventCard from './components/eventCard'
 import styles from './page.module.css'
 
@@ -46,8 +47,13 @@ async function getEvents() {
 
   const result = await res.json();
 
-  return (Array.isArray(result) ? result : [])
+  const top5 = (Array.isArray(result) ? result : [])
     .filter(e => e.visibility === "public")
     .sort((a, b) => a.time - b.time)
     .splice(0, 5);
+
+  return top5.map(e => {
+    e._when = moment.tz(e.time, e.group.timezone).calendar();
+    return e;
+  });
 }
