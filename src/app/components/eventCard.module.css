@@ -1,5 +1,6 @@
 .event_card {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     border-radius: var(--border-radius);
     background: var(--card-background-color);
     box-shadow: var(--card-box-shadow);
@@ -8,14 +9,21 @@
     color: var(--h1-color) !important;
     text-decoration: none !important;
     text-align: left;
+    opacity: 0.95;
+    transition: transform 0.2s;
+    font-size: 0.875em;
 }
 
-.event_time,
-.event_yes_rsvp {
-    display: block;
+.event_card:hover {
+    transform: scale(1.05);
+}
+
+.event_name {
+    padding-top: 0.2rem;
+    padding-bottom: 0.5rem;
 }
 
 .event_yes_rsvp {
-    margin-top: 0.5rem;
+    margin-top: auto;
     color: var(--muted-color);
 }

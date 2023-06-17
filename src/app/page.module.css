@@ -1,9 +1,20 @@
-.main {
+.home {
   display: flex;
+  flex-direction: column;
   height: 100%;
+  overflow-x: hidden;
 }
 
-.main_container {
+.home > section {
+  margin: 0;
+}
+
+.intro_section {
+  flex-grow: 1;
+  display: flex;
+}
+
+.intro_container {
   text-align: center;
   margin-top: auto;
   margin-bottom: auto;
@@ -11,11 +22,40 @@
 }
 
 @media (max-width: 575.98px) {
-  .main_header__nw {
-      display: block;
+  .intro_header__nw {
+    display: block;
   }
 }
 
-.main_button:not(:focus) {
+.intro_button:not(:focus) {
   box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+}
+
+.events_section {
+  overflow-x: auto;
+  padding-left: 3rem;
+}
+
+.events_container {
+  width: 60rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.events_header {
+  color: rgba(255, 255, 255, 0.7);
+  margin-left: 1rem;
+}
+
+.events_links {
+  display: flex;
+}
+
+.events_links a {
+  min-width: 10rem;
+  width: 10rem;
+}
+
+.events_spacer {
+  min-width: 3rem;
 }

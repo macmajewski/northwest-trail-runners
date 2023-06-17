@@ -21,9 +21,6 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  font-family: serif;
-  font-weight: 400;
-  font-style: normal;
 }
 
 h1,
@@ -46,4 +43,8 @@ h1 {
   h1 {
     font-size: 3.5rem;
   }
+}
+
+.font-serif {
+  font-family: serif;
 }
