@@ -1,9 +1,9 @@
-import moment from 'moment-timezone'
+import { upcoming } from './data/meetup'
 import EventCard from './components/eventCard'
 import styles from './page.module.css'
 
 export default async function Home() {
-  const events = await getEvents();
+  const events = await upcoming();
 
   return (
     <main className={styles.home}>
@@ -19,7 +19,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className={styles.events_section}>
+      {events.length > 0 && <section className={styles.events_section}>
         <div className={styles.events_container}>
           <strong className={styles.events_header}>Upcoming:</strong>
           <div className={styles.events_links}>
@@ -27,26 +27,8 @@ export default async function Home() {
             <div className={styles.events_spacer}></div>
           </div>
         </div>
-      </section>
+      </section>}
 
     </main>
   )
-}
-
-async function getEvents() {
-  const res = await fetch('https://api.meetup.com/northwest-trail-runners/events');
-
-  if (!res.ok) throw new Error(res.status);
-
-  const result = await res.json();
-
-  const top5 = (Array.isArray(result) ? result : [])
-    .filter(event => event.visibility === "public")
-    .sort((a, b) => a.time - b.time)
-    .splice(0, 5);
-
-  return top5.map(event => {
-    event._when = moment.tz(event.time, event.group.timezone).calendar();
-    return event;
-  });
 }
