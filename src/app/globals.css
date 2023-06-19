@@ -33,6 +33,16 @@ h1 {
   }
 }
 
+h2 {
+  font-size: 2rem;
+}
+
+@media (min-width: 992px) {
+  h2 {
+    font-size: 2.5rem;
+  }
+}
+
 .font-serif {
   font-family: serif;
 }

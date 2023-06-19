@@ -28,8 +28,17 @@ export default async function Home() {
           />
         </div>
         <div className={styles.events_background_texture}></div>
+
+        <div className={styles.events_container}>
+          <div className={styles.events_header}>
+            <small className={styles.events_label}>Events</small>
+            <h2>Trail runs are posted weekly</h2>
+            <p>Lorem ipsum dolor sit amet</p>
+          </div>
+          <div className={styles.events_body}></div>
+        </div>
       </section>
-      
+
       {/*
       {events.length > 0 && <section className={styles.events_section}>
         <div className={styles.events_container}>
