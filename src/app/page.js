@@ -27,7 +27,9 @@ export default async function Home() {
             src="/wildwood-elevation-chart.svg"
           />
         </div>
+        <div className={styles.events_background_texture}></div>
       </section>
+      
       {/*
       {events.length > 0 && <section className={styles.events_section}>
         <div className={styles.events_container}>
