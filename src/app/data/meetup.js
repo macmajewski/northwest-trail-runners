@@ -17,14 +17,14 @@ export async function fetchEvents() {
   return Array.isArray(result) ? result : [];
 }
 
-// Fetch top 5 public events from Meetup
-export async function upcoming() {
+// Fetch public events from Meetup (top 4 by default)
+export async function upcoming(take = 4) {
     const events = await fetchEvents();
   
     return events
       .filter(event => event.visibility === "public")
       .sort((a, b) => a.time - b.time)
-      .splice(0, 5)
+      .splice(0, take)
       .map(event => {
         event._timeFormatted = moment.tz(event.time, event.group.timezone).calendar();
         return event;

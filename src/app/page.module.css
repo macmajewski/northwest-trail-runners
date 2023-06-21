@@ -1,7 +1,7 @@
 .home,
 .home>section {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 /*
@@ -9,32 +9,32 @@
  */
 
 .intro_section {
-  /* todo: Move away from vh unit */
-  height: 96vh;
-  max-height: 860px;
-  display: flex;
-  background-color: #ececee;
-  background-image: url('/background.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+    /* todo: Move away from vh unit */
+    height: 96vh;
+    max-height: 860px;
+    display: flex;
+    background-color: #ececee;
+    background-image: url('/background.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .intro_container {
-  text-align: center;
-  margin-top: auto;
-  margin-bottom: auto;
-  padding-bottom: 8rem;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-bottom: 8rem;
 }
 
 @media (max-width: 575.98px) {
-  .intro_header__nw {
-    display: block;
-  }
+    .intro_header__nw {
+        display: block;
+    }
 }
 
 .intro_button:not(:focus) {
-  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
 }
 
 /*
@@ -42,113 +42,98 @@
  */
 
 .events_section {
-  background-color: var(--nwtr-brown);
-  min-height: 500px;
-  position: relative;
+    background-color: var(--nwtr-brown);
+    min-height: 500px;
+    position: relative;
 }
 
 .events_background_transition {
-  position: relative;
-  width: 100%;
-  height: 1rem;
-  top: -1rem;
+    position: absolute;
+    width: 100%;
+    height: 1rem;
+    top: -1rem;
 }
 
 .events_background_texture {
-  position: absolute;
-  top: -3rem;
-  right: 0;
-  left: 0;
-  height: 500px;
-  background-image: url('/background-texture.gif');
-  background-repeat: no-repeat;
-  background-position: top left;
-  background-size: cover;
-}
-
-@media (max-width: 768px) { 
-  .events_container {
-    margin-top: var(--spacing);
-  }
-}
-
-.events_header {
-  /* todo: use .container? */
-  padding-left: var(--spacing);
-  padding-right: var(--spacing);
-}
-
-.events_label {
-  position: relative;
-  top: -0.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  color: rgba(255,255,255,0.5);
-}
-
-.events_header p {
-  color: var(--h2-color);
-}
-
-.events_body {
-  padding: 0 var(--spacing);;
-}
-
-@media (min-width: 768px) { 
-  .events_background_transition {
-    height: 3rem;
-    top: -3rem;
-  }
-
-  .events_container {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-  }
-
-  .events_header {
-    width: 40%;
-    padding-left: 8rem;
-  }
-
-  .events_label {
     position: absolute;
-    top: 1.9rem;
-    left: var(--spacing);
-    transform: rotate(-90deg);
-  }
-
-  .events_body {
-    flex-grow: 1;
-  }
+    top: -3rem;
+    right: 0;
+    left: 0;
+    height: 500px;
+    background-image: url('/background-texture.gif');
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: cover;
 }
 
 /*
-.events_section {
-  overflow-x: auto;
-  padding-left: 3rem;
+@media (max-width: 768px) { 
+  .events_section .container {
+    margin-top: var(--spacing);
+  }
 }
+*/
 
-.events_container {
-  width: 60rem;
-  margin-left: auto;
-  margin-right: auto;
+.events_label {
+    position: relative;
+    top: -0.5rem;
+    font-size: 0.8em;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .events_header {
-  color: rgba(255, 255, 255, 0.7);
-  margin-left: 1rem;
+    padding-top: calc(var(--spacing) * 2);
 }
 
-.events_links {
-  display: flex;
+/*
+.events_header p {
+    color: var(--h2-color);
+}
+*/
+
+@media (min-width: 768px) {
+    .events_background_transition {
+        height: 3rem;
+        top: -3rem;
+    }
+
+    /*
+    .events_label {
+        position: absolute;
+        top: 1.9rem;
+        left: var(--spacing);
+        transform: rotate(-90deg);
+    }
+    */
 }
 
-.events_links a {
-  min-width: 10rem;
-  width: 10rem;
+.events_scroller {
+    overflow: scroll;
+    margin-left: calc(var(--spacing) * -1);
+    margin-right: calc(var(--spacing) * -1);
 }
 
+.events_cards {
+    display: flex;
+    width: 60rem;
+    padding-bottom: var(--spacing);
+}
+
+.events_cards a {
+    height: 284px;
+}
+
+@media (max-width: 768px) {
+    .events_cards a {
+        min-width: 13rem;
+        width: 13rem;
+    }
+}
+
+/*
 .events_spacer {
   min-width: 3rem;
 }

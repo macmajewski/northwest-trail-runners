@@ -46,3 +46,9 @@ h2 {
 .font-serif {
   font-family: serif;
 }
+
+.container {
+    max-width: 1200px !important;
+    padding-left: var(--spacing) !important;
+    padding-right: var(--spacing) !important;
+}
