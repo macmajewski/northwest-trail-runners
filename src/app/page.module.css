@@ -5,7 +5,7 @@
 }
 
 /*
- * Intro
+ * Intro section
  */
 
 .intro_section {
@@ -38,7 +38,7 @@
 }
 
 /*
- * Events
+ * Events section
  */
 
 .events_section {
@@ -91,6 +91,7 @@
     position: relative;
     overflow-x: auto;
     overflow-y: hidden;
+    z-index: 2;
     margin-left: calc(var(--spacing) * -1);
     margin-right: calc(var(--spacing) * -1);
 }
@@ -120,4 +121,30 @@
     .events_grid a {
         min-width: 11rem;
     }
+}
+
+/* Events section - bottom transition */
+
+.events_section::before,
+.events_section::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.events_section::before {
+    bottom: 7rem;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0 100vw 4rem 0px;
+    border-color: transparent transparent var(--background-color) transparent;
+}
+
+.events_section::after {
+    bottom: 0;
+    height: 7rem;
+    background-color: var(--background-color);
 }
