@@ -38,7 +38,7 @@ export default async function Home() {
 
                     {events.length > 0 && <div className={styles.events_scroller}>
                         <div className={styles.events_grid}>
-                            {events.map(event => <span className={styles.events_column}>
+                            {events.map(event => <span key={event.id} className={styles.events_column}>
                                 <EventCard event={event} /></span>)}
                             <span className={styles.events_column}>
                                 <LinkCard href={EVENTS_URL} label="View events on Meetup" />
