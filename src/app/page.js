@@ -50,6 +50,8 @@ export default async function Home() {
                 </div>
             </section>
 
+            <section style={{ height: 200 }}></section>
+
         </main>
     )
 }
