@@ -99,27 +99,33 @@
 .events_grid {
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-column-gap: calc(var(--spacing) * 1.5);
-    padding-top: var(--spacing);
+    padding: var(--spacing);
     padding-bottom: 2rem;
 }
 
-.events_column:first-child {
-    padding-left: var(--spacing);
-}
-
-.events_column:last-child {
-    padding-right: var(--spacing);
-}
-
 .events_grid a {
-    height: 15rem;
+    height: 20rem;
+}
+
+.events_grid_spacer {
+    display: none;
+    max-width: 1px;
 }
 
 @media (max-width: 1200px) {
+    .events_grid {
+        grid-template-columns: 1fr 1fr 1fr 1fr var(--spacing);
+    }
+
     .events_grid a {
-        min-width: 11rem;
+        height: 18rem;
+        min-width: 13rem;
+    }
+
+    .events_grid_spacer {
+        display: block;
     }
 }
 

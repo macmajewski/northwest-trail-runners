@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import { upcoming } from './data/meetup'
-import EventCard, { LinkCard } from './components/eventCard'
+import { upcoming } from '../lib/meetup'
+import EventCard, { LinkCard } from '../components/eventCard'
 import styles from './page.module.css'
 
 // todo: Move const somewhere else
@@ -25,7 +25,7 @@ export default async function Home() {
 
             <section className={styles.events_section}>
                 <div className={styles.events_background_transition}>
-                    <Image fill src="/wildwood-elevation-chart.svg" 
+                    <Image fill src="/wildwood-elevation-chart.svg"
                         alt="Background transition" />
                 </div>
                 <div className={styles.events_background_texture}></div>
@@ -38,11 +38,13 @@ export default async function Home() {
 
                     {events.length > 0 && <div className={styles.events_scroller}>
                         <div className={styles.events_grid}>
-                            {events.map(event => <span key={event.id} className={styles.events_column}>
-                                <EventCard event={event} /></span>)}
+                            {events.map(event => <EventCard key={event.id} event={event} />)}
+                            <span className={styles.events_grid_spacer}></span>
+                            {/*
                             <span className={styles.events_column}>
                                 <LinkCard href={EVENTS_URL} label="View events on Meetup" />
                             </span>
+                            */}
                         </div>
                     </div>}
                 </div>

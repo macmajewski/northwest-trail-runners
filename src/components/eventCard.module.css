@@ -21,17 +21,31 @@
 
 .event_card:hover,
 .link_card:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .event_name {
+    height: 3.4rem;
     padding-top: 0.2rem;
-    padding-bottom: 0.5rem;
+    word-wrap: break-word;
+    overflow: hidden;
 }
 
 .event_yes_rsvp {
-    margin-top: auto;
+    /* margin-top: auto; */
     color: var(--muted-color);
+}
+
+.event_background {
+    flex-grow: 1;
+    margin: -0.5rem;
+    margin-top: 1rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: var(--border-radius);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 }
 
 .link_image {
