@@ -1,5 +1,6 @@
 :root {
     --nwtr-brown: #b39e7f;
+    --container-spacing: 1.5rem;
 
     /* todo: Remove !importants */
     --primary: #f13a59 !important;
@@ -63,6 +64,6 @@ h2 {
 
 .container {
     max-width: 1200px !important;
-    padding-left: var(--spacing) !important;
-    padding-right: var(--spacing) !important;
+    padding-left: var(--container-spacing) !important;
+    padding-right: var(--container-spacing) !important;
 }

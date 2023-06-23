@@ -92,8 +92,8 @@
     overflow-x: auto;
     overflow-y: hidden;
     z-index: 2;
-    margin-left: calc(var(--spacing) * -1);
-    margin-right: calc(var(--spacing) * -1);
+    margin-left: calc(var(--container-spacing) * -1);
+    margin-right: calc(var(--container-spacing) * -1);
 }
 
 .events_grid {
@@ -101,8 +101,7 @@
     grid-auto-flow: column;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-column-gap: calc(var(--spacing) * 1.5);
-    padding: var(--spacing);
-    padding-bottom: 2rem;
+    padding: var(--spacing) var(--container-spacing) 2rem;
 }
 
 .events_grid a {
