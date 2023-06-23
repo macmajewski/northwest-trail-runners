@@ -1,14 +1,28 @@
 :root {
-  --nwtr-brown: #b39e7f;
+    --nwtr-brown: #b39e7f;
 
-  /* todo: Remove !importants */
-  --primary: #f13a59 !important;
-  --primary-hover: #e81035 !important;
-  --primary-focus: rgba(241, 58, 89, 0.125) !important;
-  --primary-inverse: #fff !important;
+    /* todo: Remove !importants */
+    --primary: #f13a59 !important;
+    --primary-hover: #e81035 !important;
+    --primary-focus: rgba(241, 58, 89, 0.125) !important;
+    --primary-inverse: #fff !important;
 
-  --form-element-spacing-vertical: 0.5rem;
-  --form-element-spacing-horizontal: 0.75rem;
+    --font-size: 18px;
+
+    --form-element-spacing-vertical: 0.5rem;
+    --form-element-spacing-horizontal: 0.75rem;
+}
+
+@media (min-width: 992px) {
+    :root {
+        --font-size: 19px;
+    }
+}
+
+@media (min-width: 1200px) {
+    :root {
+        --font-size: 20px;
+    }
 }
 
 h1,
@@ -17,34 +31,34 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: serif;
-  font-weight: 500;
-  line-height: 120%;
-  margin-bottom: 1.5rem;
+    font-family: serif;
+    font-weight: 500;
+    line-height: 120%;
+    margin-bottom: 1.5rem;
 }
 
 h1 {
-  font-size: 3rem;
+    font-size: 3rem;
 }
 
 @media (min-width: 992px) {
-  h1 {
-    font-size: 3.5rem;
-  }
+    h1 {
+        font-size: 3.5rem;
+    }
 }
 
 h2 {
-  font-size: 2rem;
+    font-size: 2rem;
 }
 
 @media (min-width: 992px) {
-  h2 {
-    font-size: 2.5rem;
-  }
+    h2 {
+        font-size: 2.5rem;
+    }
 }
 
 .font-serif {
-  font-family: serif;
+    font-family: serif;
 }
 
 .container {
