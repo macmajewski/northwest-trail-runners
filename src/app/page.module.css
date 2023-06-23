@@ -141,7 +141,7 @@
 }
 
 .events_section::before {
-    bottom: 7rem;
+    bottom: 9rem;
     width: 0px;
     height: 0px;
     border-style: solid;
@@ -151,6 +151,6 @@
 
 .events_section::after {
     bottom: 0;
-    height: 7rem;
+    height: 9rem;
     background-color: var(--background-color);
 }
