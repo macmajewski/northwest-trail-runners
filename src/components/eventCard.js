@@ -18,6 +18,10 @@ function Going({ count }) {
 }
 
 function Avatars({ count }) {
+    if (count < 1) {
+        return (<span className={styles.avatar}></span>)
+    }
+
     return (<span className={styles.avatars}>
         {Array.from(Array(Math.min(count, 3)), (_, i) => 
             (<span key={i} className={styles.avatar + ` ${color()}`}></span>))}
