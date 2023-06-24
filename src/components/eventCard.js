@@ -20,7 +20,7 @@ function Going({ count }) {
 function Avatars({ count }) {
     return (<span className={styles.avatars}>
         {Array.from(Array(Math.min(count, 3)), (_, i) => 
-            (<span className={styles.avatar + ` ${color()}`}></span>))}
+            (<span key={i} className={styles.avatar + ` ${color()}`}></span>))}
     </span>);
 }
 
