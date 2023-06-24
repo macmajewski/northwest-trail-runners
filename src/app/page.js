@@ -40,11 +40,8 @@ export default async function Home() {
                         <div className={styles.events_grid}>
                             {events.map(event => <EventCard key={event.id} event={event} />)}
                             <span className={styles.events_grid_spacer}></span>
-                            {/*
-                            <span className={styles.events_column}>
-                                <LinkCard href={EVENTS_URL} label="View events on Meetup" />
-                            </span>
-                            */}
+                            {/* todo: Add link to events page
+                                <a href={EVENTS_URL}>View events on Meetup</a> */}
                         </div>
                     </div>}
                 </div>
