@@ -1,5 +1,4 @@
-.event_card,
-.link_card {
+.card {
     display: flex;
     flex-direction: column;
     border-radius: var(--border-radius);
@@ -13,30 +12,20 @@
     font-size: 0.875em;
 }
 
-.link_card {
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+@media (min-width: 768px) {
+    .card:hover {
+        transform: scale(1.02);
+    }
 }
 
-.event_card:hover,
-.link_card:hover {
-    transform: scale(1.02);
-}
-
-.event_name {
+.name {
     height: 3.4rem;
     padding-top: 0.2rem;
     word-wrap: break-word;
     overflow: hidden;
 }
 
-.event_yes_rsvp {
-    /* margin-top: auto; */
-    color: var(--muted-color);
-}
-
-.event_background {
+.background {
     flex-grow: 1;
     margin: -0.5rem;
     margin-top: 1rem;
@@ -48,6 +37,53 @@
     border-top-right-radius: 0;
 }
 
-.link_image {
-    margin-bottom: var(--spacing);
+.going {
+    display: flex;
+    align-items: center;
+    color: var(--muted-color);
+}
+
+.avatars {
+    position: relative;
+    height: 1.5rem;
+    width: 2.5rem;
+}
+
+.avatars .avatar {
+    position: absolute;
+    z-index: 3;
+}
+
+.avatars .avatar:nth-child(2) {
+    z-index: 2;
+    left: .35rem;
+    transform: scale(0.95);
+}
+
+.avatars .avatar:nth-child(3) {
+    z-index: 1;
+    left: .7rem;
+    transform: scale(0.9);
+}
+
+.avatar {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--muted-color);
+    border: 2px solid var(--card-background-color);
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+.green {
+    background-color: #54d286;
+}
+
+.yellow {
+    background-color: #e2c03b;
+}
+
+.pink {
+    background-color: #e64cc7;
 }
