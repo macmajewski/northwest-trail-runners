@@ -1,0 +1,90 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--border-radius);
+    background: var(--card-background-color);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+    padding: 1rem;
+    color: var(--h2-color) !important;
+    text-decoration: none !important;
+    text-align: left;
+    transition: transform 0.2s;
+    font-size: 0.875em;
+}
+
+@media (min-width: 768px) {
+    .card:hover {
+        transform: scale(1.02);
+    }
+}
+
+.name {
+    height: 2.8rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.6rem;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
+.background {
+    flex-grow: 1;
+    margin: -0.5rem;
+    margin-top: 1rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: var(--border-radius);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.going {
+    display: flex;
+    align-items: center;
+    color: var(--muted-color);
+}
+
+.avatar {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--muted-border-color);
+    border: 2px solid var(--card-background-color);
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+.avatars {
+    position: relative;
+    height: 1.5rem;
+    width: 2.5rem;
+}
+
+.avatars .avatar {
+    position: absolute;
+    z-index: 3;
+}
+
+.avatars .avatar:nth-child(2) {
+    z-index: 2;
+    left: .35rem;
+    transform: scale(0.95);
+}
+
+.avatars .avatar:nth-child(3) {
+    z-index: 1;
+    left: .7rem;
+    transform: scale(0.9);
+}
+
+.green {
+    background-color: #54d286;
+}
+
+.yellow {
+    background-color: #e2c03b;
+}
+
+.pink {
+    background-color: #e64cc7;
+}
