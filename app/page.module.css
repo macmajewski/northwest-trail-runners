@@ -89,7 +89,6 @@
 
 .events_header {
     padding-top: calc(var(--spacing) * 1.5);
-    margin-bottom: calc(var(--spacing) * 1.8);
 }
 
 .events_scroller {
