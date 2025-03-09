@@ -30,11 +30,13 @@ function Avatars({ count }: { count: number }) {
 }
 
 function color() {
-	const val = Math.floor(Math.random() * 3);
+	const val = Math.floor(Math.random() * 4);
 	if (val === 0)
 		return styles.yellow;
 	if (val === 1)
 		return styles.green;
+	if (val === 2)
+		return styles.blue;
 	return styles.pink;
 }
 
