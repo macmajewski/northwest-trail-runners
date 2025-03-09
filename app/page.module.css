@@ -31,6 +31,10 @@
     .intro_header__nw {
         display: block;
     }
+
+    .intro_section {
+        height: 640px;
+    }
 }
 
 .intro_button:not(:focus) {
