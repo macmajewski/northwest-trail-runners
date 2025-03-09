@@ -4,6 +4,7 @@ const siteConfig = {
     MEETUP_GROUP_URL: "https://www.meetup.com/northwest-trail-runners",
     INSTAGRAM_URL: "https://www.instagram.com/northwesttrailrunners",
     FACEBOOK_URL: "https://www.facebook.com/groups/northwesttrailrunners",
+    STRAVA_URL: "https://www.strava.com/clubs/northwesttrailrunners",
 } as const;
 
 export default siteConfig;
