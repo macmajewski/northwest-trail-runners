@@ -1,7 +1,7 @@
-import {Event} from "@/services/meetup";
+import {MeetupEvent} from "@/services/meetup";
 import styles from "./eventCard.module.css";
 
-export default function EventCard({ event }: { event: Event }) {
+export default function EventCard({ event }: { event: MeetupEvent }) {
 	return (<a href={event.link} title={event.name} className={styles.card}>
 		<small>{event._timeFormatted}</small>
 		<strong className={styles.name}>{truncate(event.name)}</strong>

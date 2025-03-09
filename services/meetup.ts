@@ -2,7 +2,7 @@ import moment from "moment-timezone";
 
 const BASE_URL = "https://api.meetup.com/northwest-trail-runners";
 
-export interface Event {
+export interface MeetupEvent {
     created: number
     duration: number
     id: string
@@ -17,10 +17,10 @@ export interface Event {
     utc_offset: number
     waitlist_count: number
     yes_rsvp_count: number
-    venue: Venue
+    venue: MeetupVenue
     is_online_event: boolean
     eventType: string
-    group: Group
+    group: MeetupGroup
     link: string
     description: string
     how_to_find_us: string
@@ -31,7 +31,7 @@ export interface Event {
     _timeFormatted: string
 }
 
-export interface Venue {
+export interface MeetupVenue {
     id: number
     name: string
     lat: number
@@ -45,7 +45,7 @@ export interface Venue {
     state: string
 }
 
-export interface Group {
+export interface MeetupGroup {
     created: number
     name: string
     id: number
@@ -63,7 +63,7 @@ export interface Group {
 
 // todo: Cache in case API is down
 // https://nextjs.org/docs/app/building-your-application/data-fetching/caching
-export async function fetchEvents(): Promise<Event[]> {
+export async function fetchEvents(): Promise<MeetupEvent[]> {
     const response = await fetch(`${BASE_URL}/events`, {
         next: { revalidate: 60 }
     });
@@ -82,7 +82,7 @@ export async function fetchEvents(): Promise<Event[]> {
  * Fetch public upcoming events from Meetup (top 4 by default)
  * @param take
  */
-export async function fetchUpcomingEvents(take = 4): Promise<Event[]> {
+export async function fetchUpcomingEvents(take = 4): Promise<MeetupEvent[]> {
     const events = await fetchEvents();
 
     return events
