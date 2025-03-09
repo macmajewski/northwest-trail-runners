@@ -172,6 +172,5 @@
 
 .about_container {
     border-top: 1px solid var(--muted-border-color);
-    margin-top: calc(var(--spacing) * 6);
-    text-align: center;
+    margin-top: calc(var(--spacing) * 5);
 }
