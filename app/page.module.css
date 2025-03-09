@@ -145,10 +145,10 @@
 
 .events_section::before {
     bottom: 6rem;
-    width: 0px;
-    height: 0px;
+    width: 0;
+    height: 0;
     border-style: solid;
-    border-width: 0 100vw 4rem 0px;
+    border-width: 0 100vw 2rem 0;
     border-color: transparent transparent var(--background-color) transparent;
 }
 
@@ -156,4 +156,10 @@
     bottom: 0;
     height: 6rem;
     background-color: var(--background-color);
+}
+
+@media (min-width: 768px) {
+    .events_section::before {
+        border-width: 0 100vw 4rem 0;
+    }
 }
