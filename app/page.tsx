@@ -33,8 +33,8 @@ export default async function Home() {
 
                 <div className="container">
                     <div className={styles.events_header}>
-                        <small className={styles.events_label}>Events</small>
-                        <h2>Trail runs are posted weekly</h2>
+                        <small className={styles.events_label}>Upcoming Runs</small>
+                        <h2>New trails, new challenges</h2>
                     </div>
 
                     {events.length > 0 && <div className={styles.events_scroller}>
