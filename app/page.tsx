@@ -1,23 +1,24 @@
-import Image from 'next/image';
-import {upcoming} from '@/services/meetup';
-import EventCard from '@/components/eventCard';
-import styles from './page.module.css';
+import siteConfig from "@/contants/siteConfig";
+import Image from "next/image";
+import {fetchUpcomingEvents} from "@/services/meetup";
+import EventCard from "@/components/eventCard";
+import styles from "./page.module.css";
 
-// todo: Move const somewhere else
-const GROUP_URL = 'https://www.meetup.com/northwest-trail-runners';
 // const EVENTS_URL = `${GROUP_URL}/events`;
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
-    const events = await upcoming();
+    const events = await fetchUpcomingEvents();
 
     return (
         <main className={styles.home}>
 
             <section className={styles.intro_section}>
-                <div className={styles.intro_container + ' container'}>
+                <div className={styles.intro_container + " container"}>
                     <h1><span className={styles.intro_header__nw}>Northwest</span> Trail Runners</h1>
                     <p>Community based in Portland, OR.</p>
-                    <a href={GROUP_URL} role="button" className={styles.intro_button + ' font-serif'}>
+                    <a href={siteConfig.MEETUP_GROUP_URL} role="button" className={styles.intro_button + " font-serif"}>
                         Join us on Meetup
                     </a>
                 </div>
