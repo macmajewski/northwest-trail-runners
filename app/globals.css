@@ -58,6 +58,20 @@ h2 {
     }
 }
 
+h3 {
+    font-size: 1.6rem;
+}
+
+@media (min-width: 992px) {
+    h3 {
+        font-size: 2.1rem;
+    }
+}
+
+p {
+    color: var(--h2-color) !important;
+}
+
 .font-serif {
     font-family: serif;
 }
