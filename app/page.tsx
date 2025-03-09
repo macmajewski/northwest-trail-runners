@@ -3,6 +3,8 @@ import Image from "next/image";
 import {fetchUpcomingEvents} from "@/services/meetup";
 import EventCard from "@/components/eventCard";
 import styles from "./page.module.css";
+import socialIconInstagram from "@/public/social-icon-instagram.svg";
+import socialIconFacebook from "@/public/social-icon-facebook.svg";
 
 // const EVENTS_URL = `${GROUP_URL}/events`;
 
@@ -48,7 +50,41 @@ export default async function Home() {
                 </div>
             </section>
 
-            <section style={{height: 200}}></section>
+            <section className={styles.about_section}>
+                <div className={styles.about_container + " container"}>
+                    {/* todo: Add about section?
+                    <div className={styles.about_header}>
+                        <h1>About</h1>
+                    </div>
+                    <p>Come join us for a run out on the trails! We get together every Saturday morning and Tuesday evening in Forest Park or other trails around Portland. We also schedule occasional adventure runs in scenic locations around the Pacific Northwest, celebratory holiday runs, and trail maintenance parties.</p>
+                    */}
+                    <nav>
+                        <ul>
+                            <li><small><strong>{siteConfig.TITLE}</strong></small></li>
+                        </ul>
+                        <ul>
+                            <li><a href={siteConfig.INSTAGRAM_URL} target="_blank">
+                                <Image
+                                    priority
+                                    width={40}
+                                    height={40}
+                                    src={socialIconInstagram}
+                                    alt="Follow us on Instagram"
+                                />
+                            </a></li>
+                            <li><a href={siteConfig.FACEBOOK_URL} target="_blank">
+                                <Image
+                                    priority
+                                    width={40}
+                                    height={40}
+                                    src={socialIconFacebook}
+                                    alt="Follow us on Facebook"
+                                />
+                            </a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </section>
 
         </main>
     )

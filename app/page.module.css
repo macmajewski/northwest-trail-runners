@@ -163,3 +163,15 @@
         border-width: 0 100vw 4rem 0;
     }
 }
+
+/*
+ * About section
+ */
+
+.about_section {}
+
+.about_container {
+    border-top: 1px solid #f2f2f2;
+    margin-top: calc(var(--spacing) * 6);
+    text-align: center;
+}
