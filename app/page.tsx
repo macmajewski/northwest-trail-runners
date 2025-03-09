@@ -43,7 +43,7 @@ export default async function Home() {
 						<div className={styles.events_grid}>
                             {events.map(event => <EventCard key={event.id} event={event}/>)}
 							<span className={styles.events_grid_spacer}></span>
-                            {/* todo: Add link to events page
+                            {/* todo: Add link to events page?
                                 <a href={EVENTS_URL}>View events on Meetup</a> */}
 						</div>
 					</div>}
@@ -59,9 +59,7 @@ export default async function Home() {
                     <p>Come join us for a run out on the trails! We get together every Saturday morning and Tuesday evening in Forest Park or other trails around Portland. We also schedule occasional adventure runs in scenic locations around the Pacific Northwest, celebratory holiday runs, and trail maintenance parties.</p>
                     */}
                     <nav>
-                        <ul>
-                            <li><small><strong>{siteConfig.TITLE}</strong></small></li>
-                        </ul>
+                        <ul></ul>
                         <ul>
                             <li><a href={siteConfig.INSTAGRAM_URL} target="_blank">
                                 <Image
@@ -82,6 +80,7 @@ export default async function Home() {
                                 />
                             </a></li>
                         </ul>
+                        <ul></ul>
                     </nav>
                 </div>
             </section>
