@@ -1,25 +1,26 @@
-import styles from './eventCard.module.css'
+import {Event} from "@/services/meetup";
+import styles from "./eventCard.module.css";
 
-export default function EventCard({ event }) {
+export default function EventCard({ event }: { event: Event }) {
 	return (<a href={event.link} title={event.name} className={styles.card}>
 		<small>{event._timeFormatted}</small>
 		<strong className={styles.name}>{truncate(event.name)}</strong>
 		<Going count={event.yes_rsvp_count} />
 		<span className={styles.background}
-			  style={{ backgroundImage: `url(/event/venue/${event.id})` }}></span>
+			  style={{ backgroundImage: `url(/event/${event.id}/staticmap)` }}></span>
 	</a>);
 }
 
-function Going({ count }) {
+function Going({ count }: { count: number }) {
 	return (<small className={styles.going}>
 		<Avatars count={count} />
 		{count} going
 	</small>);
 }
 
-function Avatars({ count }) {
+function Avatars({ count }: { count: number }) {
 	if (count < 1) {
-		return (<span className={styles.avatar}></span>)
+		return (<span className={styles.avatar}></span>);
 	}
 
 	return (<span className={styles.avatars}>
@@ -37,8 +38,8 @@ function color() {
 	return styles.pink;
 }
 
-function truncate(name, maxLength = 46) {
+function truncate(name: string, maxLength = 46) {
 	return name.length > maxLength
-		? `${name.substr(0, maxLength - 3)}...`
+		? `${name.substring(0, maxLength - 3)}...`
 		: name;
 }
