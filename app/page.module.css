@@ -70,7 +70,7 @@
     top: -3rem;
     right: 0;
     left: 0;
-    height: 520px;
+    height: 550px;
     background-image: url('/background-texture.gif');
     background-repeat: no-repeat;
     background-position: top left;
@@ -144,7 +144,7 @@
 }
 
 .events_section::before {
-    bottom: 6rem;
+    bottom: 4rem;
     width: 0;
     height: 0;
     border-style: solid;
@@ -154,7 +154,7 @@
 
 .events_section::after {
     bottom: 0;
-    height: 6rem;
+    height: 4rem;
     background-color: var(--background-color);
 }
 
