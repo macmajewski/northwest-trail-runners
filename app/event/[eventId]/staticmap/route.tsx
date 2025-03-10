@@ -1,21 +1,11 @@
 import {ImageResponse} from "next/og";
 import {fetchEvents} from "@/services/meetup";
-
-// Geoapify settings
-const URL = "https://maps.geoapify.com/v1/staticmap";
-const KEY = process.env.GEOAPIFY_KEY;
-const WIDTH = 300;
-const HEIGHT = 500;
-const STYLE = "toner";
-const ZOOM = 14;
+import fetchStaticMapImage from "@/services/mapbox";
 
 export async function GET(request: Request, {params}: { params: Promise<{ eventId: string }> }) {
     const {eventId} = await params;
 
     try {
-        if (!KEY)
-            throw new Error("Geoapify key not configured.");
-
         const events = await fetchEvents();
         const event = events.find(e => e.id == eventId);
 
@@ -29,11 +19,9 @@ export async function GET(request: Request, {params}: { params: Promise<{ eventI
         if (!lon || !lat)
             throw new Error("Venue lon/lat not provided.");
 
-        const url = `${URL}?center=lonlat:${lon},${lat}&width=${WIDTH}&height=${HEIGHT}&style=${STYLE}&zoom=${ZOOM}&apiKey=${KEY}`;
-
-        const response = await fetch(url, {next: {revalidate: 3600}});
+        const response = await fetchStaticMapImage(lon, lat);
         if (!response.ok)
-            throw new Error(`Failed to fetch image. Status: ${response.status}. URL: ${url}`);
+            throw new Error(`Failed to fetch static map image. HTTP Status: ${response.status}`);
 
         const blob = await response.blob();
         return new Response(blob);
